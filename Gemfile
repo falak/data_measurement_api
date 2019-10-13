@@ -5,14 +5,18 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# # Use mysql2 as the database for Active Record
+# gem 'mysql2', '~> 1.4'
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use Bycrpt to check the user password
 gem 'bcrypt', '~> 3.1.7'
 # Use JWT for user token authentication
 gem 'jwt'
+# Use gem to to create services
+gem 'simple_command'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
