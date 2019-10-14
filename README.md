@@ -62,3 +62,11 @@ https://github.com/nebulab/simple_command
 For implementation of JWT, I have taken help from the following tutorial
 
 https://www.pluralsight.com/guides/token-based-authentication-with-ruby-on-rails-5-api
+
+
+### Future Works
+
+1. Implementation of swagger to test the API
+2. Yard for automated documentation of the application
+3. For more efficient processing of data i would take values in small chunks and process them. Like with each request i could attach another parameter like 'limit'
+
