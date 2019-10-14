@@ -52,3 +52,13 @@ You can find login credentials in the seeds.rb file
 	$ curl -H "Content-Type: application/json" -X POST -d '{"email":"example@mail.com","password":""}' http://localhost:3000/authenticate
 
 	$ curl -H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0NjA2NTgxODZ9.xsSwcPC22IR71OBv6bU_OGCSyfE89DvEzWfDU0iybMA" http://localhost:3000/api/v1/process_data?threshold=3&start_date=2019-10-13 20:51:51.954872&end_date=2019-10-13 20:59:51.954335
+
+### For more information about the gems used in this app check the following links
+
+https://github.com/jwt/ruby-jwt
+
+https://github.com/nebulab/simple_command
+
+For implementation of JWT, I have taken help from the following tutorial
+
+https://www.pluralsight.com/guides/token-based-authentication-with-ruby-on-rails-5-api
