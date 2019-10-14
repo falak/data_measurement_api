@@ -10,6 +10,6 @@
 # User.create!(email: 'test_email@mail.com' , password: '123123123' , password_confirmation: '123123123')
 
 # Creates Data
-100000.times {
-  Datum.create!(value: Random.rand(0.1...2.9), threshold: Random.rand(4))
-}
+# 100000.times {
+#   Datum.create!(value: Random.rand(0.1...2.9), threshold: Random.rand(4))
+# }

@@ -8,19 +8,23 @@ module Api
       # @param end_date [TimeDate] end date for selecting the range of data.
       # @return [Json] Output signal otherwise error
       def process_data
-        data = Datum.select(:value).where('threshold = ? AND created_at <= ? AND created_at >= ?', params[:threshold] , params[:end_date].to_datetime , params[:start_date].to_datetime)
-        if !data.nil?
-          output = Array.new
-          data.each do |d|
-            if d.value > 2.0
-              output << 1
-            else
-              output << 0
+        if !params[:threshold].nil? && !params[:end_date].nil? && !params[:start_date].nil?
+          data = Datum.select(:value).where('threshold = ? AND created_at <= ? AND created_at >= ?', params[:threshold] , params[:end_date].to_datetime , params[:start_date].to_datetime)
+          if !data.nil?
+            output = Array.new
+            data.each do |d|
+              if d.value > 2.0
+                output << 1
+              else
+                output << 0
+              end
             end
+            render json: { status: 'SUCCESS', message: 'data available for selected dates',data: output}
+          else
+            render json: { status: 'ERROR', message: 'Data not found' }
           end
-          render json: { status: 'SUCCESS', message: 'data available for selected dates',data: output}
         else
-          render json: { status: 'ERROR', message: 'Data not found' }
+          render json: { status: 'ERROR', message: 'Some parameters missing' }
         end
       end
 
